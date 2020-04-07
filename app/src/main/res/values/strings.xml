@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Konovodov_HW_2_1</string>
+    <string name="enterMoney">Ввод денег</string>
+    <string name="payInfo">Информация об оплате</string>
+    <string name="ok">OK</string>
+    <string name="fromCard">С банковской карты</string>
+    <string name="fromPhone">С мобильного телефона</string>
+    <string name="cashByAddress">Наличными по адресу</string>
 </resources>
