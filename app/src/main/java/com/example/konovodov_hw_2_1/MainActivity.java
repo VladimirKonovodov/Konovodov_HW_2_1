@@ -29,54 +29,20 @@ public class MainActivity extends AppCompatActivity {
         mBtnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Toast.makeText(MainActivity.this, "необходимое сообщение", Toast.LENGTH_LONG).show();
-
-               /* Toast toast = Toast.makeText(getApplicationContext(),
-                        "введенная дата уже существует в коллекции!\n" + "введите другую дату!", Toast.LENGTH_SHORT);
-                toast.show();*/
-
-            }
-        });
-        mBankCardChkBx.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                /*if (mMobilePhoneChkBx.isChecked()) {
-                mMobilePhoneChkBx.setChecked(false);}
-                if (mCashAddressChkBx.isChecked()) {
-                mCashAddressChkBx.setChecked(false);}
-*/mBankCardChkBx.setOnCheckedChangeListener(checkedChangeListener);
-            }
-        });
-        mMobilePhoneChkBx.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-               /* if (mBankCardChkBx.isChecked()) {
-                    mBankCardChkBx.setChecked(false);
+                if (mBankCardChkBx.isChecked()) {
+                    Toast.makeText(MainActivity.this, "оплата банковской картой", Toast.LENGTH_LONG).show();
                 }
-                if (mCashAddressChkBx.isChecked()) {
-                    mCashAddressChkBx.setChecked(false);
-                }
-*/mMobilePhoneChkBx.setOnCheckedChangeListener(checkedChangeListener);
-
-            }
-        });
-        mCashAddressChkBx.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-  /*              if (mBankCardChkBx.isChecked()) {
-                mBankCardChkBx.setChecked(false);}
                 if (mMobilePhoneChkBx.isChecked()) {
-                mMobilePhoneChkBx.setChecked(false);}
-    */ mCashAddressChkBx.setOnCheckedChangeListener(checkedChangeListener);
+                    Toast.makeText(MainActivity.this, "оплата с мобильного телефона", Toast.LENGTH_LONG).show();
+                }
+                if (mCashAddressChkBx.isChecked()) {
+                    Toast.makeText(MainActivity.this, "оплата наличными по адресу", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
-
-
 
     }
-
-
 
 
 
@@ -106,16 +72,20 @@ public class MainActivity extends AppCompatActivity {
                         resetCheckBoxes();
                         mBankCardChkBx.setChecked(true);
                         mInputInfo.setInputType(InputType.TYPE_CLASS_NUMBER);
+                        mInputInfo.setText("");
+
                         break;
                     case R.id.mobilePhoneChkBx:
                         resetCheckBoxes();
                         mMobilePhoneChkBx.setChecked(true);
                         mInputInfo.setInputType(InputType.TYPE_CLASS_PHONE);
+                        mInputInfo.setText("");
                         break;
                     case R.id.cashAddressChkBx:
                         resetCheckBoxes();
                         mInputInfo.setInputType(InputType.TYPE_CLASS_TEXT);
                         mCashAddressChkBx.setChecked(true);
+                        mInputInfo.setText("");
                         break;
                     default:
                 }
